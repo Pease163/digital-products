@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Products by Daniil Kornilov | Templates, Toolkits & Guides</title>
+    <meta name="description" content="16 premium digital products: AI toolkits, Notion templates, career guides, freelancer tools. Instant download. Created by a 19-year-old developer.">
+    <meta name="keywords" content="digital products, AI prompts, Notion templates, resume templates, freelancer tools, career guide, interview prep">
+    <meta property="og:title" content="Digital Products by Daniil Kornilov">
+    <meta property="og:description" content="16 premium digital products for developers, freelancers, and creators. AI toolkits, Notion templates, career guides.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a28;
+            --border: #1e1e2e;
+            --text: #e2e2e8;
+            --text-muted: #8888a0;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --gradient-2: linear-gradient(135deg, #00cec9, #81ecec);
+            --gradient-3: linear-gradient(135deg, #fd79a8, #e84393);
+            --success: #00b894;
+            --warning: #fdcb6e;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-cta {
+            background: var(--gradient-1);
+            color: #fff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            -webkit-text-fill-color: #fff !important;
+        }
+
+        .hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.15), transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 206, 201, 0.1), transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(253, 121, 168, 0.08), transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(108, 92, 231, 0.15);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(108, 92, 231, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(108, 92, 231, 0.5); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: var(--bg-card); border-color: var(--accent); }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .stat { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: var(--accent-light); }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== FILTER TABS ===== */
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filter-tab.active, .filter-tab:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* ===== PRODUCT CARDS ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(108, 92, 231, 0.3);
+            box-shadow: 0 8px 40px rgba(108, 92, 231, 0.15);
+        }
+
+        .product-card:hover::before { opacity: 1; }
+
+        .product-emoji { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .product-tag {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .tag-ai { background: rgba(108, 92, 231, 0.15); color: var(--accent-light); }
+        .tag-career { background: rgba(0, 206, 201, 0.15); color: #81ecec; }
+        .tag-business { background: rgba(253, 121, 168, 0.15); color: #fd79a8; }
+        .tag-dev { background: rgba(253, 203, 110, 0.15); color: #fdcb6e; }
+        .tag-content { background: rgba(0, 184, 148, 0.15); color: #55efc4; }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.3rem 0;
+        }
+
+        .product-features li::before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .product-price .currency { font-size: 1rem; color: var(--text-muted); }
+
+        .btn-buy {
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4); }
+
+        /* ===== BUNDLES ===== */
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bundle-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .bundle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(108, 92, 231, 0.15);
+        }
+
+        .bundle-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(108, 92, 231, 0.2);
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: -12px; right: 20px;
+            background: var(--gradient-3);
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .bundle-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .bundle-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+        .bundle-includes {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .bundle-includes li {
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .bundle-includes li::before { content: '📦 '; }
+
+        .bundle-pricing {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .bundle-old-price {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .bundle-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bundle-save {
+            font-size: 0.85rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            background: var(--bg-card);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover { background: var(--bg-card-hover); }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: var(--accent-light);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        /* ===== FREE SECTION ===== */
+        .free-section {
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.08), rgba(0, 206, 201, 0.08));
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 800px;
+        }
+
+        .free-section h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; }
+        .free-section p { color: var(--text-muted); margin-bottom: 2rem; }
+
+        .free-items {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .free-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--accent-light); }
+
+        .footer-copy { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0; right: 0;
+                background: var(--bg);
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .hero-stats { gap: 1.5rem; }
+            .stat-number { font-size: 1.5rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .bundles-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .free-section { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo">DK Products</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#bundles">Bundles</a></li>
+            <li><a href="#free">Free</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://boosty.to/swiftuidev" target="_blank" class="nav-cta">Visit Store</a></li>
+        </ul>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">&#9889; 16 Digital Products Available Now</div>
+        <h1>Level Up Your<br><span class="gradient-text">Career & Productivity</span></h1>
+        <p>Premium templates, AI toolkits, and career guides crafted for developers, freelancers, and creators. Instant download. Built by a developer who gets it.</p>
+        <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Browse Products &#8595;</a>
+            <a href="https://boosty.to/swiftuidev" target="_blank" class="btn btn-secondary">Visit Boosty Store</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Products</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Templates & Prompts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">&#8381;390</div>
+                <div class="stat-label">Starting From</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+        <div class="section-header">
+            <h2>All Products</h2>
+            <p>Choose the tool that fits your goals. Every product is ready to use right after purchase.</p>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterProducts('all')">All</button>
+            <button class="filter-tab" onclick="filterProducts('ai')">AI & Prompts</button>
+            <button class="filter-tab" onclick="filterProducts('career')">Career</button>
+            <button class="filter-tab" onclick="filterProducts('business')">Business</button>
+            <button class="filter-tab" onclick="filterProducts('dev')">Developer</button>
+            <button class="filter-tab" onclick="filterProducts('content')">Content</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+
+            <!-- 1. ADHD Life Planner -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#129504;</div>
+                <span class="product-tag tag-business">Productivity</span>
+                <div class="product-title">ADHD Life Planner</div>
+                <div class="product-desc">Notion-based planning system designed for ADHD minds. Brain dump, energy tracking, habit builder, and more.</div>
+                <ul class="product-features">
+                    <li>Brain dump &amp; capture system</li>
+                    <li>Energy-based scheduling</li>
+                    <li>Habit tracker with streaks</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;1,900</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 2. Freelancer Money OS -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#128176;</div>
+                <span class="product-tag tag-business">Finance</span>
+                <div class="product-title">Freelancer Money OS</div>
+                <div class="product-desc">Complete financial system for freelancers. Track income, expenses, taxes, clients, and projects in Google Sheets.</div>
+                <ul class="product-features">
+                    <li>Income &amp; expense tracker</li>
+                    <li>Tax calculator &amp; reminders</li>
+                    <li>Client &amp; project management</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;2,500</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 3. AI Prompt Pack -->
+            <div class="product-card fade-in" data-category="ai">
+                <div class="product-emoji">&#129302;</div>
+                <span class="product-tag tag-ai">AI</span>
+                <div class="product-title">AI Prompt Pack for Developers</div>
+                <div class="product-desc">105 battle-tested prompts for code generation, debugging, architecture, code review, and documentation.</div>
+                <ul class="product-features">
+                    <li>105 copy-paste prompts</li>
+                    <li>7 categories: code, debug, review...</li>
+                    <li>Works with ChatGPT, Claude, Gemini</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;1,200</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 4. ATS Resume Pack -->
+            <div class="product-card fade-in" data-category="career">
+                <div class="product-emoji">&#128196;</div>
+                <span class="product-tag tag-career">Career</span>
+                <div class="product-title">ATS Resume Pack</div>
+                <div class="product-desc">5 ATS-optimized resume templates that pass automated screening. Clean, professional, and proven to get interviews.</div>
+                <ul class="product-features">
+                    <li>5 professional templates</li>
+                    <li>ATS-optimized formatting</li>
+                    <li>Cover letter templates included</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;490</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 5. Instagram Caption Templates -->
+            <div class="product-card fade-in" data-category="content">
+                <div class="product-emoji">&#128247;</div>
+                <span class="product-tag tag-content">Content</span>
+                <div class="product-title">200 Instagram Caption Templates</div>
+                <div class="product-desc">Ready-to-post captions for every niche. Business, lifestyle, tech, fitness, travel, and more.</div>
+                <ul class="product-features">
+                    <li>200 copy-paste captions</li>
+                    <li>10+ niche categories</li>
+                    <li>Hashtag sets included</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;590</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 6. ChatGPT Cheatsheet -->
+            <div class="product-card fade-in" data-category="ai">
+                <div class="product-emoji">&#128640;</div>
+                <span class="product-tag tag-ai">AI</span>
+                <div class="product-title">ChatGPT Ultimate Cheatsheet</div>
+                <div class="product-desc">150 prompts for work, study, content creation, coding, and personal productivity. The only cheatsheet you need.</div>
+                <ul class="product-features">
+                    <li>150 ready-to-use prompts</li>
+                    <li>Categories: work, study, code...</li>
+                    <li>Prompt engineering tips</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;390</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 7. Freelancer Starter Pack -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#128188;</div>
+                <span class="product-tag tag-business">Business</span>
+                <div class="product-title">Freelancer Starter Pack</div>
+                <div class="product-desc">Everything you need to start freelancing: proposal templates, contracts, invoice templates, and client management tools.</div>
+                <ul class="product-features">
+                    <li>Proposal &amp; contract templates</li>
+                    <li>Invoice generator</li>
+                    <li>Client onboarding checklist</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;990</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 8. Content Calendar -->
+            <div class="product-card fade-in" data-category="content">
+                <div class="product-emoji">&#128197;</div>
+                <span class="product-tag tag-content">Content</span>
+                <div class="product-title">Content Calendar</div>
+                <div class="product-desc">Plan, schedule, and track your content across all platforms. Notion + Google Sheets combo for maximum efficiency.</div>
+                <ul class="product-features">
+                    <li>Monthly planning templates</li>
+                    <li>Content idea bank</li>
+                    <li>Analytics tracker</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;690</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 9. Side Hustle Generator -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#128161;</div>
+                <span class="product-tag tag-business">Business</span>
+                <div class="product-title">Side Hustle Idea Generator</div>
+                <div class="product-desc">100 validated side hustle ideas with income estimates, startup costs, and a 7-day launch checklist for each.</div>
+                <ul class="product-features">
+                    <li>100 business ideas</li>
+                    <li>Income calculator</li>
+                    <li>7-day launch checklist</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;490</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 10. Ultimate AI Toolkit -->
+            <div class="product-card fade-in" data-category="ai">
+                <div class="product-emoji">&#9889;</div>
+                <span class="product-tag tag-ai">AI</span>
+                <div class="product-title">Ultimate AI Toolkit</div>
+                <div class="product-desc">200+ prompts, AI tool comparisons, automation workflows with Zapier/Make. Your complete AI productivity stack.</div>
+                <ul class="product-features">
+                    <li>200+ AI prompts by category</li>
+                    <li>ChatGPT vs Claude vs Gemini</li>
+                    <li>Automation workflows</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;790</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 11. Job Interview Kit -->
+            <div class="product-card fade-in" data-category="career">
+                <div class="product-emoji">&#128188;</div>
+                <span class="product-tag tag-career">Career</span>
+                <div class="product-title">Job Interview Mastery Kit</div>
+                <div class="product-desc">50 common questions with answers, STAR method templates, salary negotiation scripts, and follow-up email templates.</div>
+                <ul class="product-features">
+                    <li>50 questions with answers</li>
+                    <li>STAR method templates</li>
+                    <li>Salary negotiation scripts</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;590</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 12. Digital Nomad Pack -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#127758;</div>
+                <span class="product-tag tag-business">Lifestyle</span>
+                <div class="product-title">Digital Nomad Starter Pack</div>
+                <div class="product-desc">Country & visa tracker, travel budget planner, remote work toolkit, and relocation checklist for 20+ countries.</div>
+                <ul class="product-features">
+                    <li>20-country visa guide</li>
+                    <li>Travel budget planner</li>
+                    <li>Relocation checklist</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;990</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 13. Creator Blueprint -->
+            <div class="product-card fade-in" data-category="content">
+                <div class="product-emoji">&#127916;</div>
+                <span class="product-tag tag-content">Content</span>
+                <div class="product-title">Creator Monetization Blueprint</div>
+                <div class="product-desc">20 monetization strategies, income calculator, media kit templates, and sponsor outreach email templates.</div>
+                <ul class="product-features">
+                    <li>20 monetization methods</li>
+                    <li>Media kit templates</li>
+                    <li>Sponsor email scripts</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;690</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 14. SwiftUI Starter Kit -->
+            <div class="product-card fade-in" data-category="dev">
+                <div class="product-emoji">&#128241;</div>
+                <span class="product-tag tag-dev">Developer</span>
+                <div class="product-title">SwiftUI Starter Kit Pro</div>
+                <div class="product-desc">Production-ready SwiftUI template with 5 screens, 20+ components, MVVM architecture, dark mode, and networking layer.</div>
+                <ul class="product-features">
+                    <li>5 screens: Onboarding to Settings</li>
+                    <li>20+ reusable components</li>
+                    <li>MVVM + NetworkManager</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;1,900</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 15. SwiftUI Components -->
+            <div class="product-card fade-in" data-category="dev">
+                <div class="product-emoji">&#129513;</div>
+                <span class="product-tag tag-dev">Developer</span>
+                <div class="product-title">SwiftUI UI Components Pack</div>
+                <div class="product-desc">38 production-ready SwiftUI components: buttons, cards, forms, lists, navigation, modals, and loaders.</div>
+                <ul class="product-features">
+                    <li>38 ready-to-use components</li>
+                    <li>7 categories</li>
+                    <li>Copy-paste into any project</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;990</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <!-- 16. Student Life OS -->
+            <div class="product-card fade-in" data-category="business">
+                <div class="product-emoji">&#127891;</div>
+                <span class="product-tag tag-business">Student</span>
+                <div class="product-title">Student Life OS</div>
+                <div class="product-desc">Complete Notion system for students: class schedule, assignment tracker, study notes, goals, habits, and budget.</div>
+                <ul class="product-features">
+                    <li>Class schedule &amp; deadlines</li>
+                    <li>Habit &amp; goal tracker</li>
+                    <li>Student budget planner</li>
+                </ul>
+                <div class="product-footer">
+                    <div class="product-price">&#8381;900</div>
+                    <a href="https://boosty.to/swiftuidev" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BUNDLES -->
+    <section class="section" id="bundles">
+        <div class="section-header">
+            <h2>Save with Bundles</h2>
+            <p>Get more value with curated product bundles. Save up to 40% compared to buying individually.</p>
+        </div>
+
+        <div class="bundles-grid">
+            <!-- Bundle 1: AI Master -->
+            <div class="bundle-card fade-in">
+                <div class="bundle-name">&#129302; AI Master Bundle</div>
+                <div class="bundle-desc">Everything you need to master AI tools and prompts.</div>
+                <ul class="bundle-includes">
+                    <li>AI Prompt Pack for Developers (&#8381;1,200)</li>
+                    <li>ChatGPT Ultimate Cheatsheet (&#8381;390)</li>
+                    <li>Ultimate AI Toolkit (&#8381;790)</li>
+                </ul>
+                <div class="bundle-pricing">
+                    <span class="bundle-old-price">&#8381;2,380</span>
+                    <span class="bundle-price">&#8381;1,490</span>
+                    <span class="bundle-save">Save 37%</span>
+                </div>
+                <a href="https://boosty.to/swiftuidev" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Bundle</a>
+            </div>
+
+            <!-- Bundle 2: Career Launch (Featured) -->
+            <div class="bundle-card featured fade-in">
+                <div class="bundle-badge">BEST VALUE</div>
+                <div class="bundle-name">&#128640; Career Launch Bundle</div>
+                <div class="bundle-desc">Land your dream job with this complete career toolkit.</div>
+                <ul class="bundle-includes">
+                    <li>ATS Resume Pack (&#8381;490)</li>
+                    <li>Job Interview Mastery Kit (&#8381;590)</li>
+                    <li>AI Prompt Pack for Developers (&#8381;1,200)</li>
+                    <li>Freelancer Starter Pack (&#8381;990)</li>
+                </ul>
+                <div class="bundle-pricing">
+                    <span class="bundle-old-price">&#8381;3,270</span>
+                    <span class="bundle-price">&#8381;1,990</span>
+                    <span class="bundle-save">Save 39%</span>
+                </div>
+                <a href="https://boosty.to/swiftuidev" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Bundle</a>
+            </div>
+
+            <!-- Bundle 3: Creator Pro -->
+            <div class="bundle-card fade-in">
+                <div class="bundle-name">&#127775; Creator Pro Bundle</div>
+                <div class="bundle-desc">Build, monetize, and scale your creator business.</div>
+                <ul class="bundle-includes">
+                    <li>Content Calendar (&#8381;690)</li>
+                    <li>Instagram Caption Templates (&#8381;590)</li>
+                    <li>Creator Monetization Blueprint (&#8381;690)</li>
+                    <li>Side Hustle Idea Generator (&#8381;490)</li>
+                </ul>
+                <div class="bundle-pricing">
+                    <span class="bundle-old-price">&#8381;2,460</span>
+                    <span class="bundle-price">&#8381;1,490</span>
+                    <span class="bundle-save">Save 40%</span>
+                </div>
+                <a href="https://boosty.to/swiftuidev" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Bundle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE SAMPLES -->
+    <section class="section" id="free">
+        <div class="free-section">
+            <h3>Try Before You Buy</h3>
+            <p>Download free samples from our best-selling products. No email required.</p>
+            <div class="free-items">
+                <div class="free-item">&#129302; 5 Free AI Prompts for Developers</div>
+                <div class="free-item">&#128203; Interview Prep Checklist</div>
+                <div class="free-item">&#128178; Side Hustle Income Calculator</div>
+            </div>
+            <a href="https://boosty.to/swiftuidev" target="_blank" class="btn btn-primary">Get Free Samples on Boosty</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What format are the products in?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Products are delivered as Markdown files, Notion templates, and Google Sheets. You can view them on any device, copy-paste content, and customize everything to your needs.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I access products after purchase?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">After purchasing on Boosty, you get instant access to the product content. You can view it directly on Boosty or download the files.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I get a refund?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Due to the digital nature of the products, we generally don't offer refunds. However, if you're unsatisfied, contact us and we'll work something out. Your satisfaction matters to us.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Are the AI prompts compatible with all AI tools?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Yes! Our prompts work with ChatGPT, Claude, Gemini, Copilot, and any other LLM. They're designed to be universal and platform-agnostic.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you offer bundle discounts?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Absolutely! Check out our bundles section above. You can save up to 40% by purchasing curated product bundles instead of buying individually.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Who created these products?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Hi! I'm Daniil, a 19-year-old iOS developer and creator. I built these products based on real problems I've faced as a developer, freelancer, and student. Every template and guide comes from hands-on experience.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://boosty.to/swiftuidev" target="_blank">Boosty Store</a>
+            <a href="https://github.com/Pease163" target="_blank">GitHub</a>
+            <a href="https://x.com/peasee163" target="_blank">Twitter/X</a>
+            <a href="https://dev.to/__be2942592" target="_blank">Dev.to</a>
+            <a href="https://t.me/SwiftUIDaily" target="_blank">Telegram</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Daniil Kornilov. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Filter products
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const tabs = document.querySelectorAll('.filter-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = '';
+                    card.style.animation = 'fadeInUp 0.4s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ toggle
+        function toggleFaq(el) {
+            el.parentElement.classList.toggle('open');
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
