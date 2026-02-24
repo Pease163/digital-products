@@ -1309,6 +1309,32 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // GA4: Track "Buy Now" clicks
+        document.querySelectorAll('.btn-buy').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.product-card');
+                const productName = card ? card.querySelector('.product-title').textContent : 'unknown';
+                gtag('event', 'purchase_click', {
+                    product_name: productName,
+                    event_category: 'ecommerce',
+                    event_label: productName
+                });
+            });
+        });
+
+        // GA4: Track "Get Bundle" clicks
+        document.querySelectorAll('.bundle-card .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.bundle-card');
+                const bundleName = card ? card.querySelector('h4').textContent : 'unknown';
+                gtag('event', 'bundle_click', {
+                    bundle_name: bundleName,
+                    event_category: 'ecommerce',
+                    event_label: bundleName
+                });
+            });
+        });
     </script>
 
     <!-- GoatCounter Analytics (privacy-friendly, no cookies) -->
