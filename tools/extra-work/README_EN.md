@@ -27,7 +27,7 @@ Scope Change Desk adds original scope, a change log, approval evidence and a spe
 
 ## Share card
 
-The HTML card hides all figures by default. A separate checkbox includes base/extra hours, hourly return after extra work and the proposed fee. The tool has no client or project name fields. It downloads locally; you decide whether and where to share it. Demo calculations are marked fictional. The CTA opens Scope Change Desk using generic UTM tags only, without your inputs.
+The HTML card hides all figures by default. A separate checkbox includes base/extra hours, hourly return after extra work and the proposed fee. The tool has no client or project name fields. It downloads locally; you decide whether and where to share it. Demo calculations are marked fictional. The card CTA opens the free Extra Work Calculator so the recipient can run their own calculation. It uses generic UTM tags only, without your inputs. The paid next step is available inside the tool.
 
 ## Support
 

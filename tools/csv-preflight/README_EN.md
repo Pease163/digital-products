@@ -33,7 +33,7 @@ Free redistribution with Kornilov Tools attribution is allowed; resale is not. [
 
 ## Share card
 
-Download a standalone HTML card. By default it shows the review outcome only; counts require a separate checkbox. It never includes file names, headers, IDs, cell values or record coordinates. The full JSON ID checkbox does not affect this card. It is created locally and is never sent automatically. The CTA opens CSV Reconcile Desk; its link contains generic UTM tags only, not your data.
+Download a standalone HTML card. By default it shows the review outcome only; counts require a separate checkbox. It never includes file names, headers, IDs, cell values or record coordinates. The full JSON ID checkbox does not affect this card. It is created locally and is never sent automatically. The card CTA opens the free CSV Preflight so the recipient can check their own file; its link contains generic UTM tags only, not your data. The paid next step is available inside the tool.
 
 ## Support
 
