@@ -19,7 +19,8 @@
     events.push(payload);
     if (events.length > 100) events.shift();
     if (endpoint) {
-      fetch(endpoint, { method:'POST', mode:'cors', credentials:'omit', referrerPolicy:'no-referrer', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), keepalive:true }).catch(() => {});
+      const networkPayload = { schema:payload.schema, event:payload.event, product:payload.product, placement:payload.placement, language:payload.language };
+      fetch(endpoint, { method:'POST', mode:'cors', credentials:'omit', referrerPolicy:'no-referrer', headers:{'Content-Type':'application/json'}, body:JSON.stringify(networkPayload), keepalive:true }).catch(() => {});
     }
     return true;
   }
