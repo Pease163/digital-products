@@ -19,9 +19,4 @@
     slider.addEventListener('change', () => window.KornilovAnalytics?.track('demo_calculate', {product: 'extra-work', placement: 'hero'}));
     render();
   }
-  document.querySelectorAll('[data-screenshot]').forEach(figure => {
-    const img = figure.querySelector('img');
-    img.addEventListener('load', () => { figure.hidden = false; });
-    img.src = figure.dataset.screenshot;
-  });
 })();
