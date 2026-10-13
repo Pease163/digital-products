@@ -1,0 +1,1 @@
+globalThis.CodeKitPreflightDemo = 'ID;Product;Stock;Note\n001;Desk Lamp;12;Ready\n002;Cable;40;Ready\n002;Cable duplicate;20;Check source\n;Missing ID;3;Needs ID\n003;Notebook;8;=1+1\n004;"Stand ""Pro""";5;"First line\nsecond line"\n';

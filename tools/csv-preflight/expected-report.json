@@ -1,0 +1,41 @@
+{
+  "version": "1.1.0",
+  "structureValid": true,
+  "input": {
+    "delimiter": ";"
+  },
+  "limits": {
+    "bytes": 2097152,
+    "rows": 10000,
+    "columns": 100
+  },
+  "keyColumn": 1,
+  "containsIDValues": false,
+  "summary": {
+    "records": 6,
+    "columns": 4,
+    "duplicateKeys": 1,
+    "duplicateRecords": 2,
+    "emptyIDs": 1,
+    "formulaLikeCells": 1
+  },
+  "duplicateGroups": [
+    {
+      "records": [
+        3,
+        4
+      ]
+    }
+  ],
+  "emptyIDRecords": [
+    5
+  ],
+  "formulaMarkers": [
+    {
+      "record": 6,
+      "column": 4
+    }
+  ],
+  "formulaMarkersOmitted": 0,
+  "formulaMarkerLimit": 200
+}

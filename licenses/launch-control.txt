@@ -1,0 +1,3 @@
+Kornilov Tools Launch Control Desk v1.1.0
+Copyright2026 Daniil Kornilov.
+The buyer may use and modify the tool for personal and commercial projects, including internal team work. Reselling or redistributing the product package or its source as a competing product is not permitted. Documents generated from the buyer’s own data may be shared with collaborators or clients. No third-party libraries or assets are bundled.

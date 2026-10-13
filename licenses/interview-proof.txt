@@ -1,0 +1,46 @@
+Interview Proof Kit — personal-use licence / Лицензия личного использования
+
+This licence covers the original tool, original guides and original templates
+provided in this product. It does not claim rights to third-party text, logos,
+software, websites, job descriptions or artifacts you choose to enter.
+
+As a purchaser, you may:
+- use the tool and materials for your own interview preparation;
+- make backups and use your copy on your own devices;
+- adapt the original code, exercises and templates for your personal needs;
+- share exports containing your own answers with an interviewer or mentor,
+  subject to the rights and confidentiality of the material you entered.
+
+You may not resell, sublicense, redistribute, publish for download or bundle
+the product, its original source files, guides or templates as another product.
+Your own notes and experience remain yours. This is a licence to use and adapt
+the supplied product, not a transfer of its copyright.
+
+The product is a preparation aid. It is not an employment decision system and
+does not provide a hiring, salary or suitability guarantee. You are responsible
+for the truthfulness and lawful use of your own material and for keeping backups.
+Nothing in this licence excludes rights that cannot lawfully be excluded.
+
+Русская версия
+
+Лицензия распространяется на оригинальный инструмент, руководства и шаблоны
+этого продукта. Она не приписывает автору права на сторонние тексты, логотипы,
+сайты, вакансии, программное обеспечение и артефакты, которые вы вводите сами.
+
+Покупатель может использовать продукт для собственной подготовки, хранить
+копии на своих устройствах, делать резервные копии и адаптировать исходный
+код, упражнения и шаблоны для личных задач. Экспорты с собственными ответами
+можно передавать интервьюеру или наставнику с учётом прав и конфиденциальности
+введённых материалов.
+
+Перепродажа, сублицензирование, распространение, публикация для скачивания
+или включение исходного продукта, его кода, руководств и шаблонов в другой
+продаваемый или распространяемый продукт не разрешены. Ваши собственные
+заметки и опыт принадлежат вам. Лицензия даёт право использования и адаптации,
+а не передаёт авторские права на исходный продукт.
+
+Это инструмент подготовки, а не система принятия кадровых решений. Оффер,
+уровень зарплаты и профессиональная пригодность не гарантируются. Покупатель
+отвечает за достоверность своих материалов, допустимость их использования
+и сохранение резервных копий. Обязательные права, которые нельзя исключить
+по применимому закону, сохраняются.

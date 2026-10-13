@@ -1,0 +1,28 @@
+Kornilov Tools CSV Preflight Free — Free Redistribution License, v1.0
+Copyright © 2026 Kornilov Tools.
+
+You may use this product for personal and commercial internal work free of
+charge. You may modify it for your own internal use. You may redistribute
+the complete unmodified product free of charge, provided you retain this
+license, the Kornilov Tools name and the attribution below. Do not represent the
+product as your own creation.
+
+Required attribution: "CSV Preflight by Kornilov Tools — https://pease163.github.io/digital-products/"
+
+Do not sell the application, source or example package, charge for access,
+relicense it, or bundle it as a paid item without the copyright holder's
+permission. This does not prohibit charging for your own services or
+sharing reports generated during commercial work. Input data and reports
+remain yours; Kornilov Tools claims no rights to them.
+
+The product is provided "as is", without a warranty of accuracy or fitness
+for a particular purpose, to the extent permitted by law. Review findings
+before business decisions. No malware detection or data repair is promised.
+Mandatory rights and liabilities under applicable law remain unaffected.
+
+Русское пояснение:
+Можно бесплатно использовать продукт для себя и работы, изменять для
+внутреннего использования и распространять полный неизменённый пакет
+бесплатно с лицензией и указанием Kornilov Tools. Перепродажа и платный доступ
+не разрешены. Можно брать оплату за свои услуги и передавать созданные
+отчёты. Обязательные законные права не ограничиваются.

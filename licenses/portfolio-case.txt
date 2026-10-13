@@ -1,0 +1,51 @@
+Portfolio Case Kit — personal-use licence / Лицензия личного использования
+
+This licence covers the original editor, original guides and original examples
+supplied with this product. It does not claim ownership of third-party code,
+texts, logos, websites, job descriptions or evidence.
+
+The purchaser may:
+- use and adapt the editor and guides for their own portfolio work;
+- keep backups and use copies on their own devices;
+- publish, host, share and modify the HTML websites and Markdown README files
+  generated for their own personal portfolio, including the generated styling;
+- retain ownership of their own input text, project descriptions and data.
+
+The purchaser may not resell, sublicense, redistribute, publish for download
+or bundle the original editor, guides or example collection as another product
+or template service. Publishing a generated personal portfolio is explicitly
+permitted and is not treated as redistribution of the editor.
+
+Use of third-party material remains subject to its original rights and licence.
+You are responsible for permission to publish project details and for truthful
+claims. Fictional examples must not be represented as your real experience.
+
+This is a portfolio preparation tool, not a hiring or suitability assessment.
+No offer, income, traffic or employment result is guaranteed. Keep backups;
+browser storage can be erased. Mandatory statutory rights are preserved.
+
+Русская версия
+
+Лицензия относится к оригинальному редактору, руководствам и примерам,
+поставляемым в продукте. Она не приписывает автору права на сторонние тексты,
+код, логотипы, сайты, вакансии и подтверждения.
+
+Покупатель может использовать и адаптировать редактор и руководства для
+собственного портфолио, хранить копии на своих устройствах, публиковать,
+размещать, передавать и изменять созданные для себя HTML-сайты и Markdown
+README, включая сгенерированные стили. Ваши введённые тексты, описания
+проектов и данные остаются вашими.
+
+Нельзя перепродавать, сублицензировать, распространять, публиковать для
+скачивания или включать исходный редактор, руководства и коллекцию примеров
+в другой товар либо сервис шаблонов. Публикация собственного созданного
+портфолио разрешена явно и не считается распространением редактора.
+
+Сторонние материалы сохраняют исходные права и лицензии. Покупатель отвечает
+за разрешение публиковать детали проекта и за достоверность утверждений.
+Вымышленные примеры нельзя выдавать за реальный личный опыт.
+
+Это инструмент подготовки портфолио, а не оценки пригодности или решения
+о найме. Оффер, доход, трафик и результат трудоустройства не гарантируются.
+Сохраняйте резервные копии: хранилище браузера может быть очищено.
+Обязательные права, предоставленные применимым законом, сохраняются.

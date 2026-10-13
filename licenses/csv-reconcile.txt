@@ -1,0 +1,36 @@
+Kornilov Tools CSV Reconcile Desk — Commercial End-User License, version 1.0
+Copyright © 2026 Kornilov Tools. All rights reserved.
+
+Purchase grants the purchaser a non-exclusive, perpetual license to use this
+product for personal work and the purchaser's own commercial operations on
+their own devices. A business purchase permits internal use by one team of
+up to five people. The purchaser may modify the included source for these
+internal uses and make backup copies.
+
+Reports generated with the product may be shared with clients and colleagues
+and used in commercial work. The purchaser retains all rights to their own
+input data and generated reports; Kornilov Tools claims no rights to that data.
+
+Do not redistribute, resell, sublicense or publish the product's application,
+source, templates or example package as a standalone product, hosted public
+service or part of a competing commercial package. Do not remove copyright
+or license notices. A license to reports is not a license to redistribute
+the application itself. Redistribution within the licensed team is allowed.
+
+The product is supplied "as is". To the extent permitted by applicable law,
+no warranty of fitness for a particular purpose, uninterrupted operation
+or error-free output is given. The purchaser must review outputs before
+making business decisions. Liability is limited to the purchase price to
+the extent permitted by law. These terms do not exclude any mandatory
+consumer rights or liabilities that cannot lawfully be excluded.
+
+No third-party runtime libraries are bundled. Browser and operating-system
+licenses are separate. Refund and support terms, if offered at purchase,
+are governed by the seller's stated offer and applicable law.
+
+Русское пояснение (при расхождении применяется английский текст выше):
+Лицензия позволяет личное и коммерческое внутреннее использование, изменение
+исходников для себя и своей команды до пяти человек и резервные копии.
+Отчёты можно передавать клиентам. Само приложение и исходники нельзя продавать,
+публиковать или раздавать третьим лицам как самостоятельный продукт/сервис.
+Обязательные права потребителя, установленные законом, не ограничиваются.

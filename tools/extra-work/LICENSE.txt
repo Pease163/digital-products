@@ -1,0 +1,2 @@
+Kornilov Tools Extra Work Calculator v1.1.0. Copyright2026 Daniil Kornilov.
+Free to use and adapt for personal/commercial work. The unmodified package may be shared for free with Kornilov Tools attribution and its catalogue link. Reselling the package or presenting it as your original product is not permitted. Your calculation outputs may be shared freely. No third-party libraries/assets are included.

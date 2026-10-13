@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GUIDE_EN · Kornilov Tools</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#18302d;background:#f5f6f1;max-width:920px;margin:0 auto;padding:32px 24px}main{background:white;padding:32px;border:1px solid #d8e1dc;border-radius:16px}h1,h2,h3{line-height:1.2}h1{font-size:32px}h2{margin-top:32px}table{border-collapse:collapse;display:block;overflow:auto}td,th{padding:8px;border:1px solid #ccd8d0}a{color:#156653}pre{overflow:auto;background:#f1f4f2;padding:16px}code{overflow-wrap:anywhere}footer{margin:24px 0;font-size:14px}p,li{overflow-wrap:anywhere}@media(max-width:600px){body{padding:16px}main{padding:20px}}</style></head><body><main><h1>Get useful results in 5 minutes</h1>
+<h2>Minute 1: inspect the example</h2>
+<p>Open <code>index.html</code> and select “Check the example”. This is <code>demo.csv</code>: a small inventory export where ID 002 repeats, one record lacks an ID, and a note contains <code>=1+1</code>. Its quoting and multiline description are structurally valid.</p>
+<p>Expect 6 records, 4 columns; 1 duplicate group involving 2 records; 1 empty ID; 1 formula-like cell. Structurally valid CSV can still have quality problems.</p>
+<h2>Minute 2: load your own export</h2>
+<p>Choose a CSV/TSV. Select UTF-8 or Windows-1251 according to the exporting system. Choose auto, comma, semicolon or Tab. Auto does not guess when uncertain: select explicitly.</p>
+<p>A structural error shows a message, unknown counts “—” and no preview. Check quoting, blank lines and field counts. An error report is not a successful validation.</p>
+<h2>Minute 3: choose the right ID</h2>
+<p>Use SKU for products or Order ID for orders. Customer names may legitimately repeat and usually are not order keys. Inspect how choosing a different column changes duplicate groups.</p>
+<p>In the example, duplicate 002 is in records <strong>3 and 4</strong>, the empty ID is record <strong>5</strong>, and the formula-like note is record <strong>6</strong>, column <strong>4</strong>. The header is record 1. A 5/10/20-row preview helps locate them.</p>
+<h2>Minute 4: decide what to fix in the source</h2>
+<p>A duplicate could be an export error or a legitimate repeated record: the tool does not decide. Confirm whether the chosen column should be unique. Fill missing IDs in the source system. Review formula-like notes before opening in Excel; negative numbers are flagged too.</p>
+<p>No rows are deleted, no first duplicate is chosen, and IDs/numbers are not normalized. Correct the source, export again and recheck.</p>
+<h2>Minute 5: save a report without raw data</h2>
+<p>Leave “Include ID values in JSON” off and press JSON ↓. Get counts, duplicate record groups, empty-ID indexes and formula coordinates — without source values or file names. Share the report with a colleague as instructions for checking the source.</p>
+<p>If the colleague may see IDs, the checkbox adds duplicate-group IDs. Other cells still are not exported. With the checkbox off, the demo's counts and coordinates match <code>expected-report.json</code>; the interface also records the input file's settings.</p>
+<p>Limits: 2 MiB / 10,000 records / 100 columns. This tool does not verify prices, statuses or personal facts and is not antivirus software. Select “Clear” when done. Other Kornilov Tools solutions are available through the optional Boosty button; file data is not sent with the link.</p>
+<h2>Share card</h2>
+<p>Download a standalone HTML card. By default it shows the review outcome only; counts require a separate checkbox. It never includes file names, headers, IDs, cell values or record coordinates. The full JSON ID checkbox does not affect this card. It is created locally and is never sent automatically. The CTA opens CSV Reconcile Desk; its link contains generic UTM tags only, not your data.</p>
+<h2>Support</h2>
+<p>Kornilov Tools, version 1.1.0. Contact: <a href="https://pease163.github.io/digital-products/#support">support on the website</a>. Include the product, version, browser, steps and an anonymized example. Never include passwords, keys or client data.</p>
+</main><footer>Kornilov Tools · 1.1.0 · <a href="index.html">Open the tool</a></footer></body></html>

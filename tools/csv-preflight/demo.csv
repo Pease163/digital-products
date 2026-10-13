@@ -1,0 +1,8 @@
+ID;Product;Stock;Note
+001;Desk Lamp;12;Ready
+002;Cable;40;Ready
+002;Cable duplicate;20;Check source
+;Missing ID;3;Needs ID
+003;Notebook;8;=1+1
+004;"Stand ""Pro""";5;"First line
+second line"

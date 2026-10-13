@@ -1,0 +1,8 @@
+SKU;Name;Stock;Price;Status
+001;Desk Lamp;12;29.90;active
+002;"Cable; USB-C";40;9.50;active
+003;Notebook;8;4.00;active
+004;"Stand ""Pro""";5;39.00;active
+DUP;Old A;1;1.00;active
+DUP;Old B;2;2.00;active
+;Missing SKU;3;2.00;active

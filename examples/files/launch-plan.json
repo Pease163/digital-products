@@ -1,0 +1,496 @@
+{
+  "product": "codekit-launch-control",
+  "version": 1,
+  "lang": "ru",
+  "mode": "demo",
+  "kind": "digital",
+  "project": "Fictional: Catalogue Kit",
+  "release": "1.0.0",
+  "decisionNote": "",
+  "tasks": [
+    {
+      "id": "buyer",
+      "group": "offer",
+      "critical": true,
+      "deps": [],
+      "title": {
+        "ru": "Один покупатель и одна задача",
+        "en": "One buyer, one job"
+      },
+      "criterion": {
+        "ru": "Опишите конкретного покупателя, момент покупки и результат.",
+        "en": "Name the buyer, purchase trigger and deliverable."
+      },
+      "example": {
+        "ru": "Разработчик перед первой миграцией сверяет две выгрузки по ID.",
+        "en": "A developer checks two ID-based exports before a migration."
+      },
+      "status": "done",
+      "owner": "Mira (fictional)",
+      "due": "",
+      "evidence": "Fictional buyer task: compare two supplier exports by SKU."
+    },
+    {
+      "id": "outcome",
+      "group": "offer",
+      "critical": true,
+      "deps": [
+        "buyer"
+      ],
+      "title": {
+        "ru": "Проверяемый результат",
+        "en": "Verifiable outcome"
+      },
+      "criterion": {
+        "ru": "Покупатель может назвать результат первого использования и проверить его.",
+        "en": "A buyer can identify and verify the result of first use."
+      },
+      "example": {
+        "ru": "Две демонстрационные выгрузки дают точно 2 изменения, 1 новую и 1 удалённую строку.",
+        "en": "Two demo exports produce exactly 2 changes, 1 addition and 1 removal."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "contents",
+      "group": "delivery",
+      "critical": true,
+      "deps": [
+        "outcome"
+      ],
+      "title": {
+        "ru": "Состав соответствует карточке",
+        "en": "Contents match the offer"
+      },
+      "criterion": {
+        "ru": "Сопоставьте каждое обещание с конкретным файлом или рабочей функцией.",
+        "en": "Map every offer claim to a delivered file or working feature."
+      },
+      "example": {
+        "ru": "В карточке обещаны HTML, 2 CSV и инструкция; все файлы включены в ZIP.",
+        "en": "The promised HTML, 2 CSV files and guide are present in the ZIP."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "install",
+      "group": "delivery",
+      "critical": true,
+      "deps": [
+        "contents"
+      ],
+      "title": {
+        "ru": "Запуск из чистой копии",
+        "en": "Fresh-copy start"
+      },
+      "criterion": {
+        "ru": "Распакуйте архив в новую папку и выполните стартовую инструкцию.",
+        "en": "Unzip into a fresh folder and follow the quick start."
+      },
+      "example": {
+        "ru": "На втором браузере демо открыто без npm, сервера и входа.",
+        "en": "The demo opens in a second browser without npm, a server or login."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "example",
+      "group": "delivery",
+      "critical": true,
+      "deps": [
+        "install"
+      ],
+      "title": {
+        "ru": "Полный пример от входа до результата",
+        "en": "Worked end-to-end example"
+      },
+      "criterion": {
+        "ru": "Включите входные данные, ожидаемый результат и шаги проверки.",
+        "en": "Include inputs, expected output and verification steps."
+      },
+      "example": {
+        "ru": "fixtures/*.csv + expected.json; 7 шагов воспроизводятся в инструкции.",
+        "en": "fixtures/*.csv + expected.json; seven steps reproduce the guide."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "failure",
+      "group": "quality",
+      "critical": true,
+      "deps": [
+        "install"
+      ],
+      "title": {
+        "ru": "Ошибки и пустые данные",
+        "en": "Failure and empty states"
+      },
+      "criterion": {
+        "ru": "Проверьте неверный ввод, пустой файл и обычную ошибку пользователя.",
+        "en": "Test invalid input, empty files and a common user error."
+      },
+      "example": {
+        "ru": "Пустой ID показан как неоднозначная запись; исходник не изменён.",
+        "en": "An empty ID is reported as ambiguous; the source file is unchanged."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "backup",
+      "group": "quality",
+      "critical": true,
+      "deps": [
+        "install"
+      ],
+      "title": {
+        "ru": "Сохранение и восстановление",
+        "en": "Save and restore"
+      },
+      "criterion": {
+        "ru": "Экспортируйте рабочие данные и восстановите их в чистой копии.",
+        "en": "Export working data and restore it into a fresh copy."
+      },
+      "example": {
+        "ru": "JSON после импорта сохраняет все записи и выбранные настройки.",
+        "en": "JSON import preserves all records and chosen settings."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "privacy",
+      "group": "quality",
+      "critical": true,
+      "deps": [
+        "install"
+      ],
+      "title": {
+        "ru": "Путь пользовательских данных",
+        "en": "User-data path"
+      },
+      "criterion": {
+        "ru": "Укажите, что сохраняется, куда передаётся и как это удалить. Не храните ключи в примерах.",
+        "en": "Explain storage, transmission and removal; keep credentials out of examples."
+      },
+      "example": {
+        "ru": "Инструмент работает локально; JSON содержит только введённые пользователем поля.",
+        "en": "The tool runs locally; JSON contains only user-entered fields."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "mobile",
+      "group": "quality",
+      "critical": false,
+      "deps": [
+        "install"
+      ],
+      "title": {
+        "ru": "Основной экран на малой ширине",
+        "en": "Small-width primary flow"
+      },
+      "criterion": {
+        "ru": "Проверьте основные поля и действия на ширине375px.",
+        "en": "Check primary fields and actions at375px."
+      },
+      "example": {
+        "ru": "Нет горизонтального скролла страницы, действия доступны клавиатурой.",
+        "en": "No page-wide horizontal overflow; actions are keyboard accessible."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "payment",
+      "group": "commerce",
+      "critical": true,
+      "deps": [
+        "contents"
+      ],
+      "title": {
+        "ru": "Покупка и доступ к файлам",
+        "en": "Purchase and file access"
+      },
+      "criterion": {
+        "ru": "Проверьте способ оплаты и получение товара по правилам выбранной площадки.",
+        "en": "Check payment and delivery using the chosen platform’s permitted test flow."
+      },
+      "example": {
+        "ru": "Запись проверки: сумма, файл, время получения; персональные данные удалены из заметки.",
+        "en": "Record amount, delivered file and time; remove personal data from notes."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "price",
+      "group": "commerce",
+      "critical": true,
+      "deps": [
+        "buyer"
+      ],
+      "title": {
+        "ru": "Цена и границы предложения",
+        "en": "Price and offer boundaries"
+      },
+      "criterion": {
+        "ru": "Ясно укажите разовую/повторную оплату, состав и что не входит.",
+        "en": "State one-time/recurring pricing, contents and exclusions."
+      },
+      "example": {
+        "ru": "990₽ разово, без хостинга и индивидуальной настройки.",
+        "en": "One-time price; no hosting or custom implementation included."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "support",
+      "group": "commerce",
+      "critical": true,
+      "deps": [
+        "price"
+      ],
+      "title": {
+        "ru": "Контакт и порядок помощи",
+        "en": "Support route"
+      },
+      "criterion": {
+        "ru": "Опишите контакт, необходимые данные для вопроса и границы поддержки.",
+        "en": "Explain contact, useful troubleshooting details and support boundaries."
+      },
+      "example": {
+        "ru": "Версия продукта + браузер + шаги + обезличенный пример, без паролей.",
+        "en": "Product version + browser + steps + an anonymized example, no passwords."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "rights",
+      "group": "commerce",
+      "critical": true,
+      "deps": [
+        "contents"
+      ],
+      "title": {
+        "ru": "Права на поставляемые материалы",
+        "en": "Rights to delivered material"
+      },
+      "criterion": {
+        "ru": "Проверьте права на код, картинки и примеры; сформулируйте лицензию покупателя.",
+        "en": "Review rights to code, images and examples; include buyer-use terms."
+      },
+      "example": {
+        "ru": "Все примеры синтетические; сторонние assets не включены; LICENSE.txt есть.",
+        "en": "Examples are synthetic; no third-party assets included; LICENSE.txt is present."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "limitations",
+      "group": "commerce",
+      "critical": true,
+      "deps": [
+        "failure"
+      ],
+      "title": {
+        "ru": "Честные ограничения",
+        "en": "Honest limitations"
+      },
+      "criterion": {
+        "ru": "Укажите проверенные форматы/лимиты и сценарии, которые не поддерживаются.",
+        "en": "List tested formats/limits and unsupported scenarios."
+      },
+      "example": {
+        "ru": "CSV/TSV до заявленного проверенного размера, без fuzzy matching и XLSX.",
+        "en": "Tested CSV/TSV size, no fuzzy matching or XLSX."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "preview",
+      "group": "launch",
+      "critical": false,
+      "deps": [
+        "example"
+      ],
+      "title": {
+        "ru": "Бесплатная демонстрация результата",
+        "en": "Free result preview"
+      },
+      "criterion": {
+        "ru": "Подготовьте полезный пример или бесплатный отдельный инструмент.",
+        "en": "Prepare a useful sample or a standalone free utility."
+      },
+      "example": {
+        "ru": "Бесплатный CSV Preflight проверяет структуру одной выгрузки.",
+        "en": "Free CSV Preflight checks the structure of one export."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "release",
+      "group": "launch",
+      "critical": true,
+      "deps": [
+        "backup",
+        "rights"
+      ],
+      "title": {
+        "ru": "Версия и финальный архив",
+        "en": "Version and release archive"
+      },
+      "criterion": {
+        "ru": "Зафиксируйте версию, состав архива и изменения. Храните копию именно продаваемого ZIP.",
+        "en": "Record version, archive contents and changes; keep the exact sold ZIP."
+      },
+      "example": {
+        "ru": "v1.0.0, manifest.csv, контрольная сумма архива сохранены.",
+        "en": "v1.0.0, manifest.csv and archive checksum are recorded."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "rollback",
+      "group": "launch",
+      "critical": true,
+      "deps": [
+        "release"
+      ],
+      "title": {
+        "ru": "План остановки и замены",
+        "en": "Pause and replace plan"
+      },
+      "criterion": {
+        "ru": "Кто остановит продажи при дефекте, как сообщит покупателям и выдаст исправленную версию?",
+        "en": "Who pauses sales for a defect, informs buyers and delivers a fix?"
+      },
+      "example": {
+        "ru": "Владелец скрывает оффер, проверяет сохранение доступа, готовит исправленный ZIP.",
+        "en": "Owner pauses the offer, checks existing access and prepares a corrected ZIP."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "channel",
+      "group": "launch",
+      "critical": false,
+      "deps": [
+        "buyer",
+        "preview"
+      ],
+      "title": {
+        "ru": "Один канал и одна демонстрация",
+        "en": "One channel, one demonstration"
+      },
+      "criterion": {
+        "ru": "Выберите аудиторию и покажите конкретную задачу с результатом.",
+        "en": "Choose an audience and show a concrete task and output."
+      },
+      "example": {
+        "ru": "Пост с входной CSV, изменёнными строками и снимком отчёта.",
+        "en": "A post with input CSV, changed rows and a report screenshot."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "measure",
+      "group": "launch",
+      "critical": false,
+      "deps": [
+        "price",
+        "channel"
+      ],
+      "title": {
+        "ru": "План проверки спроса",
+        "en": "Demand-check plan"
+      },
+      "criterion": {
+        "ru": "Отдельно учитывайте посещения, переходы, покупки и обращения; не смешивайте их.",
+        "en": "Track views, clicks, purchases and questions separately."
+      },
+      "example": {
+        "ru": "10 целевых показов/2 испытания/1 покупка — разные события, не показатель рынка.",
+        "en": "Ten relevant views, two trials and one purchase are distinct events, not market size."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    },
+    {
+      "id": "review",
+      "group": "launch",
+      "critical": true,
+      "deps": [
+        "release",
+        "rollback",
+        "payment"
+      ],
+      "title": {
+        "ru": "Финальное решение владельца",
+        "en": "Owner’s final review"
+      },
+      "criterion": {
+        "ru": "Просмотрите блокеры и риски, запишите дату, условия решения и ответственного.",
+        "en": "Review blockers and risks; record date, conditions and decision owner."
+      },
+      "example": {
+        "ru": "Решение: маленький запуск, версия1.0.0, ответственнаяМира, ручная проверка первых обращений.",
+        "en": "Decision: small release, v1.0.0, ownerMira, manual review of first support cases."
+      },
+      "status": "todo",
+      "owner": "",
+      "due": "",
+      "evidence": ""
+    }
+  ],
+  "risks": []
+}

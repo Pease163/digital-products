@@ -1,0 +1,251 @@
+{
+  "version": "1.1.0",
+  "summary": {
+    "added": 2,
+    "removed": 1,
+    "changed": 1,
+    "unchanged": 2,
+    "rejected": 4,
+    "beforeRecords": 7,
+    "afterRecords": 6
+  },
+  "settings": {
+    "leftKey": 0,
+    "rightKey": 0,
+    "mapping": [
+      {
+        "left": 1,
+        "right": 1
+      },
+      {
+        "left": 2,
+        "right": 2
+      },
+      {
+        "left": 3,
+        "right": 3
+      },
+      {
+        "left": 4,
+        "right": 4
+      }
+    ],
+    "trim": false,
+    "caseFold": false
+  },
+  "headers": {
+    "before": [
+      "SKU",
+      "Name",
+      "Stock",
+      "Price",
+      "Status"
+    ],
+    "after": [
+      "ID",
+      "Product",
+      "Qty",
+      "Price",
+      "Status"
+    ]
+  },
+  "rows": [
+    {
+      "id": "001",
+      "status": "changed",
+      "before": {
+        "cells": [
+          "001",
+          "Desk Lamp",
+          "12",
+          "29.90",
+          "active"
+        ],
+        "record": 2,
+        "line": 2
+      },
+      "after": {
+        "cells": [
+          "001",
+          "Desk Lamp",
+          "10",
+          "29.90",
+          "active"
+        ],
+        "record": 3,
+        "line": 3
+      },
+      "changes": [
+        {
+          "leftField": "Stock",
+          "rightField": "Qty",
+          "before": "12",
+          "after": "10"
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "status": "unchanged",
+      "before": {
+        "cells": [
+          "002",
+          "Cable; USB-C",
+          "40",
+          "9.50",
+          "active"
+        ],
+        "record": 3,
+        "line": 3
+      },
+      "after": {
+        "cells": [
+          "002",
+          "Cable; USB-C",
+          "40",
+          "9.50",
+          "active"
+        ],
+        "record": 4,
+        "line": 4
+      },
+      "changes": []
+    },
+    {
+      "id": "003",
+      "status": "removed",
+      "before": {
+        "cells": [
+          "003",
+          "Notebook",
+          "8",
+          "4.00",
+          "active"
+        ],
+        "record": 4,
+        "line": 4
+      },
+      "after": null,
+      "changes": []
+    },
+    {
+      "id": "004",
+      "status": "unchanged",
+      "before": {
+        "cells": [
+          "004",
+          "Stand \"Pro\"",
+          "5",
+          "39.00",
+          "active"
+        ],
+        "record": 5,
+        "line": 5
+      },
+      "after": {
+        "cells": [
+          "004",
+          "Stand \"Pro\"",
+          "5",
+          "39.00",
+          "active"
+        ],
+        "record": 2,
+        "line": 2
+      },
+      "changes": []
+    },
+    {
+      "id": "005",
+      "status": "added",
+      "before": null,
+      "after": {
+        "cells": [
+          "005",
+          "Travel Mug",
+          "9",
+          "15.00",
+          "active"
+        ],
+        "record": 5,
+        "line": 5
+      },
+      "changes": []
+    },
+    {
+      "id": "006",
+      "status": "added",
+      "before": null,
+      "after": {
+        "cells": [
+          "006",
+          "Monitor\narm",
+          "2",
+          "59.00",
+          "active"
+        ],
+        "record": 7,
+        "line": 7
+      },
+      "changes": []
+    }
+  ],
+  "rejected": [
+    {
+      "side": "before",
+      "cells": [
+        "",
+        "Missing SKU",
+        "3",
+        "2.00",
+        "active"
+      ],
+      "record": 8,
+      "line": 8,
+      "id": "",
+      "reason": "empty_id"
+    },
+    {
+      "side": "before",
+      "cells": [
+        "DUP",
+        "Old A",
+        "1",
+        "1.00",
+        "active"
+      ],
+      "record": 6,
+      "line": 6,
+      "id": "DUP",
+      "reason": "duplicate_id"
+    },
+    {
+      "side": "before",
+      "cells": [
+        "DUP",
+        "Old B",
+        "2",
+        "2.00",
+        "active"
+      ],
+      "record": 7,
+      "line": 7,
+      "id": "DUP",
+      "reason": "duplicate_id"
+    },
+    {
+      "side": "after",
+      "cells": [
+        "DUP",
+        "Current duplicate match",
+        "2",
+        "2.00",
+        "active"
+      ],
+      "record": 6,
+      "line": 6,
+      "id": "DUP",
+      "reason": "ambiguous_counterpart"
+    }
+  ]
+}

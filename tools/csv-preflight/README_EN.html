@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README_EN · Kornilov Tools</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#18302d;background:#f5f6f1;max-width:920px;margin:0 auto;padding:32px 24px}main{background:white;padding:32px;border:1px solid #d8e1dc;border-radius:16px}h1,h2,h3{line-height:1.2}h1{font-size:32px}h2{margin-top:32px}table{border-collapse:collapse;display:block;overflow:auto}td,th{padding:8px;border:1px solid #ccd8d0}a{color:#156653}pre{overflow:auto;background:#f1f4f2;padding:16px}code{overflow-wrap:anywhere}footer{margin:24px 0;font-size:14px}p,li{overflow-wrap:anywhere}@media(max-width:600px){body{padding:16px}main{padding:20px}}</style></head><body><main><h1>CSV Preflight — free Kornilov Tools tool</h1>
+<p>Check a CSV before importing: structure, duplicate/empty IDs and formula-like cells. The tool <strong>does not modify files</strong>. No account, server or installation.</p>
+<h2>Start</h2>
+<p>Extract the whole folder and double-click <strong>index.html</strong> in a modern browser. Select “Check the example”. Expect 6 records, 4 columns, 1 duplicate ID involving 2 records, 1 empty ID and 1 formula-like cell.</p>
+<p>Choose your own CSV/TSV, encoding and delimiter. Select the ID column for the entity you care about — order, product or customer. Inspect issue coordinates and the first 5/10/20 records. Walkthrough: <a href="GUIDE_EN.html">GUIDE_EN.md</a>. Русский: <a href="README_RU.md">README_RU.md</a>.</p>
+<h2>Interpret the report</h2>
+<ul>
+<li><strong>Valid structure</strong>: headers are non-empty and unique, quotes close properly and field counts match. It does not validate business facts.</li>
+<li><strong>Duplicate IDs</strong>: distinct values occurring more than once. Records with duplicates counts all records in those groups.</li>
+<li><strong>Empty IDs</strong>: empty strings or whitespace-only values. Nothing is repaired.</li>
+<li><strong>Formula-like cells</strong>: <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code> after leading whitespace, or certain leading control characters. <code>-1</code> is flagged too: this is a review heuristic, not a malware verdict.</li>
+<li>CSV record 1 is the header. A quoted newline does not start another record.</li>
+</ul>
+<h2>Privacy</h2>
+<p>Files stay in page memory. No network calls, analytics, external libraries, localStorage or saved sessions. The Boosty button navigates only when pressed and does not attach data or reports. “Clear” removes current references and the preview; physical memory is managed by the browser.</p>
+<p>Default JSON includes <strong>counts and coordinates</strong> only, without cell values, IDs, headers or file names. “Include ID values in JSON” adds duplicate-group IDs only. The full source CSV is never included. Check the checkbox before sharing. The local raw-data preview is not exported.</p>
+<p>Invalid structures produce unknown counts, hide the preview and export <code>structureValid: false</code> with an error code. JSON includes up to 200 formula coordinates with an explicit omitted count; the total cell count is exact. All duplicate groups and empty-ID record indexes are included.</p>
+<h2>Limits</h2>
+<p><strong>2 MiB (2,097,152 bytes), 10,000 data records and 100 columns</strong> per file. UTF-8/BOM or explicitly selected Windows-1251; comma, semicolon or Tab. No XLSX, repairs, normalization, fuzzy matching or two-file comparison. <code>001</code>, <code>1</code>, <code>A</code> and <code>a</code> are different IDs. Choose the delimiter manually for single-column or ambiguous files. Blank multi-column records and spaces after closing quotes are strict errors.</p>
+<p>Free redistribution with Kornilov Tools attribution is allowed; resale is not. <a href="LICENSE.txt">LICENSE.txt</a>. Catalog: <a href="https://pease163.github.io/digital-products/">Kornilov Tools</a>.</p>
+<h2>Share card</h2>
+<p>Download a standalone HTML card. By default it shows the review outcome only; counts require a separate checkbox. It never includes file names, headers, IDs, cell values or record coordinates. The full JSON ID checkbox does not affect this card. It is created locally and is never sent automatically. The CTA opens CSV Reconcile Desk; its link contains generic UTM tags only, not your data.</p>
+<h2>Support</h2>
+<p>Kornilov Tools, version 1.1.0. Contact: <a href="https://pease163.github.io/digital-products/#support">support on the website</a>. Include the product, version, browser, steps and an anonymized example. Never include passwords, keys or client data.</p>
+</main><footer>Kornilov Tools · 1.1.0 · <a href="index.html">Open the tool</a></footer></body></html>

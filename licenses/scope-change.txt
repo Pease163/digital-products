@@ -1,0 +1,11 @@
+Scope Change Desk 1.1.0
+Copyright 2026 Daniil Kornilov / Kornilov Tools.
+
+A purchaser may use and modify this tool for their own personal and commercial projects, including projects for clients. They may share project-specific exported approval documents and data with those clients.
+
+The purchaser may not resell, redistribute or publish the original standalone app, workbook or instructional package as a competing product. Keep a private backup.
+
+All example clients, projects, numbers and approval records are fictional. The included templates are working materials, not legal representation or authenticated signatures.
+
+This license does not transfer rights to third-party names or materials that a purchaser adds to their own project.
+
