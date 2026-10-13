@@ -134,6 +134,7 @@
   let mode = 'work';
   let corruptRaw = null;
   let storageUnavailable = false;
+  let savedOnce = false;
   let pendingReplacement = null;
   let modalReturnFocus = null;
   const siteRoot = 'https://pease163.github.io/digital-products/';
@@ -142,7 +143,7 @@
   try {
     const saved = localStorage.getItem(C.STORAGE_KEY);
     if (saved !== null) {
-      try { work = C.parse(saved); }
+      try { work = C.parse(saved); savedOnce = true; }
       catch (_) { corruptRaw = saved; }
     }
   } catch (_) { storageUnavailable = true; }
@@ -164,7 +165,7 @@
 
   function save() {
     if (corruptRaw !== null) return;
-    try { localStorage.setItem(C.STORAGE_KEY, C.serialize(work)); storageUnavailable = false; }
+    try { localStorage.setItem(C.STORAGE_KEY, C.serialize(work)); storageUnavailable = false; savedOnce = true; }
     catch (_) { storageUnavailable = true; }
     renderStorage();
   }
@@ -173,7 +174,7 @@
     $('recovery-panel').hidden = corruptRaw === null;
     $('storage-warning').hidden = !storageUnavailable;
     $('storage-warning').textContent = t().storageWarning;
-    $('save-status').textContent = corruptRaw !== null ? t().locked : storageUnavailable ? t().noStorage : t().saved;
+    $('save-status').textContent = corruptRaw !== null ? t().locked : storageUnavailable ? t().noStorage : savedOnce ? t().saved : (language === 'ru' ? 'Локальный черновик' : 'Local draft');
     for (const element of $('case-form').elements) {
       element.disabled = corruptRaw !== null && !['restore-open', 'restore-file'].includes(element.id);
     }
