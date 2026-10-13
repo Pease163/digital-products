@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Бесплатно соберите один технический кейс из собственного опыта. Локальный черновик, Markdown и самостоятельная HTML-страница без аккаунта.">
+  <title>Один технический кейс — Kornilov Tools</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace" data-i18n="skip">К рабочей форме</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" id="brand-home" href="https://pease163.github.io/digital-products/" aria-label="Kornilov Tools">
+        <span class="brand-symbol" aria-hidden="true">K</span><span>Kornilov <span class="brand-light">Tools</span></span>
+      </a>
+      <div class="language-switch" role="group" aria-label="Язык интерфейса" data-i18n-aria="languageGroup">
+        <button type="button" data-language="ru" aria-pressed="true">RU</button>
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow" data-i18n="eyebrow">Бесплатно · один проект · без аккаунта</p>
+      <h1 id="page-title" data-i18n="pageTitle">Превратите одну задачу в понятный технический кейс.</h1>
+      <p class="lede" data-i18n="lede">Опишите проблему, свой вклад и решение. Отделите наблюдаемый результат от предположений. Получите Markdown для README и готовую HTML-страницу.</p>
+      <div class="intro-actions">
+        <a class="button primary" href="#workspace" data-i18n="start">Заполнить свой кейс</a>
+        <button class="button secondary" type="button" id="example-toggle" aria-pressed="false" data-i18n="openExample">Посмотреть вымышленный пример</button>
+      </div>
+      <p class="quiet" data-i18n="privacy">Текст хранится только в этом браузере. Инструмент не отправляет кейс в сеть. Экспорт и резервная копия остаются у вас.</p>
+    </section>
+
+    <noscript><p class="notice">Для работы редактора нужен JavaScript. Экспортируемая HTML-страница работает без него. JavaScript is required for the editor; exported HTML works without it.</p></noscript>
+    <p class="notice" id="storage-warning" hidden></p>
+    <p class="feedback" id="action-feedback" role="status" hidden></p>
+    <section class="recovery notice" id="recovery-panel" hidden aria-labelledby="recovery-title">
+      <h2 id="recovery-title" data-i18n="recoveryTitle">Сохранённый черновик не удалось прочитать.</h2>
+      <p data-i18n="recoveryText">Он не перезаписан. Сначала сохраните исходные данные. Затем можно открыть резервную копию или начать новый кейс.</p>
+      <div class="actions">
+        <button type="button" class="button secondary" id="rescue-download" data-i18n="rescueDownload">Скачать исходный черновик</button>
+        <button type="button" class="button secondary" id="rescue-reset" data-i18n="rescueReset">Сохранить исходник и начать заново</button>
+      </div>
+    </section>
+
+    <div class="workspace" id="workspace">
+      <section class="editor-panel" id="editor-panel" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <div><p class="eyebrow" data-i18n="yourDraft">Ваш локальный черновик</p><h2 id="form-title" data-i18n="formTitle">Один проект. Ваш опыт.</h2></div>
+          <span class="save-status" id="save-status" role="status" aria-live="polite"></span>
+        </div>
+        <p class="panel-note" data-i18n="formNote">Не нужны имя, контакты или данные работодателя. Уберите секреты и чужие персональные данные. Звёздочкой отмечены обязательные поля.</p>
+        <form id="case-form" novalidate>
+          <div class="field">
+            <label for="field-title"><span data-i18n="title">Название кейса</span> <span class="required" aria-hidden="true">*</span></label>
+            <p class="field-help" id="help-title" data-i18n="helpTitle">Назовите конкретную задачу, которую вы решали.</p>
+            <input id="field-title" name="title" type="text" maxlength="160" required aria-describedby="help-title" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="field-summary" data-i18n="summary">Короткое описание</label>
+            <p class="field-help" id="help-summary" data-i18n="helpSummary">Необязательно: одна фраза о проекте и вашей части работы.</p>
+            <textarea id="field-summary" name="summary" maxlength="350" rows="2" aria-describedby="help-summary"></textarea>
+          </div>
+          <div class="field">
+            <label for="field-stack" data-i18n="stack">Технологии и инструменты</label>
+            <p class="field-help" id="help-stack" data-i18n="helpStack">Необязательно: только то, что вы действительно использовали.</p>
+            <input id="field-stack" name="stack" type="text" maxlength="250" aria-describedby="help-stack" autocomplete="off">
+          </div>
+
+          <fieldset class="chapter">
+            <legend><span aria-hidden="true">01</span><span data-i18n="chapterContext">Задача и ответственность</span></legend>
+            <div class="field">
+              <label for="field-context"><span data-i18n="context">Проблема и контекст</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-context" data-i18n="helpContext">Что не работало, для кого и при каких ограничениях? Учебный или личный проект тоже подходит.</p>
+              <textarea id="field-context" name="context" maxlength="4000" rows="4" required aria-describedby="help-context"></textarea>
+            </div>
+            <div class="field">
+              <label for="field-contribution"><span data-i18n="contribution">Мой личный вклад</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-contribution" data-i18n="helpContribution">Что сделали именно вы? Назовите границу своей роли и работу других участников.</p>
+              <textarea id="field-contribution" name="contribution" maxlength="4000" rows="4" required aria-describedby="help-contribution"></textarea>
+            </div>
+          </fieldset>
+          <fieldset class="chapter">
+            <legend><span aria-hidden="true">02</span><span data-i18n="chapterDecision">Решение и выбор</span></legend>
+            <div class="field">
+              <label for="field-decision"><span data-i18n="decision">Техническое решение</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-decision" data-i18n="helpDecision">Что изменили и почему это решает исходную проблему? Опишите механизм, а не только название технологии.</p>
+              <textarea id="field-decision" name="decision" maxlength="4000" rows="4" required aria-describedby="help-decision"></textarea>
+            </div>
+            <div class="field">
+              <label for="field-tradeoff"><span data-i18n="tradeoff">Альтернатива и компромисс</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-tradeoff" data-i18n="helpTradeoff">Какую альтернативу рассматривали? Что потеряли или усложнили выбранным решением?</p>
+              <textarea id="field-tradeoff" name="tradeoff" maxlength="4000" rows="4" required aria-describedby="help-tradeoff"></textarea>
+            </div>
+          </fieldset>
+          <fieldset class="chapter">
+            <legend><span aria-hidden="true">03</span><span data-i18n="chapterResult">Результат и подтверждение</span></legend>
+            <div class="field">
+              <label for="field-result"><span data-i18n="result">Наблюдаемый результат</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-result" data-i18n="helpResult">Что вы проверили или наблюдали после изменения? Если метрик нет, опишите проверенное поведение без выдуманных процентов.</p>
+              <textarea id="field-result" name="result" maxlength="4000" rows="4" required aria-describedby="help-result"></textarea>
+            </div>
+            <div class="field">
+              <label for="field-evidence"><span data-i18n="evidence">Чем подтверждён результат</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-evidence" data-i18n="helpEvidence">Назовите реальный артефакт и что он показывает: diff, сценарий проверки, запись, обезличенная обратная связь. Если артефакт закрыт, обозначьте это.</p>
+              <textarea id="field-evidence" name="evidence" maxlength="4000" rows="4" required aria-describedby="help-evidence"></textarea>
+            </div>
+            <div class="field">
+              <label for="field-evidenceUrl" data-i18n="evidenceUrl">Ссылка на публичное подтверждение</label>
+              <p class="field-help" id="help-evidenceUrl" data-i18n="helpEvidenceUrl">Необязательно. Только HTTPS, без логина и пароля в адресе. Проверьте доступ без авторизации и разрешение на публикацию.</p>
+              <input id="field-evidenceUrl" name="evidenceUrl" type="url" maxlength="2048" aria-describedby="help-evidenceUrl url-error" autocomplete="off" inputmode="url" placeholder="https://">
+              <p class="field-error" id="url-error" hidden data-i18n="urlError">Укажите корректную HTTPS-ссылку без логина и пароля.</p>
+            </div>
+            <div class="field">
+              <label for="field-limits"><span data-i18n="limits">Границы результата</span> <span class="required" aria-hidden="true">*</span></label>
+              <p class="field-help" id="help-limits" data-i18n="helpLimits">Что не проверяли? На какие устройства, объём данных или условия результат пока нельзя переносить?</p>
+              <textarea id="field-limits" name="limits" maxlength="4000" rows="4" required aria-describedby="help-limits"></textarea>
+            </div>
+            <div class="field">
+              <label for="field-lesson" data-i18n="lesson">Что изменю в следующий раз</label>
+              <p class="field-help" id="help-lesson" data-i18n="helpLesson">Необязательно: одно конкретное улучшение подхода.</p>
+              <textarea id="field-lesson" name="lesson" maxlength="1500" rows="3" aria-describedby="help-lesson"></textarea>
+            </div>
+          </fieldset>
+          <label class="check-option" for="brand-credit"><input type="checkbox" id="brand-credit"><span data-i18n="brandCredit">Добавить добровольную ссылку Kornilov Tools в экспорт</span></label>
+          <div class="draft-actions">
+            <button class="button secondary" type="button" id="backup-download" data-i18n="backupDownload">Скачать резервную копию</button>
+            <button class="button quiet-button" type="button" id="restore-open" data-i18n="restoreOpen">Открыть резервную копию</button>
+            <button class="button quiet-button danger" type="button" id="reset-open" data-i18n="resetOpen">Очистить форму</button>
+          </div>
+          <input id="restore-file" type="file" accept=".json,application/json" hidden aria-label="JSON backup">
+          <p class="quiet" data-i18n="backupNote">Автосохранение зависит от браузера и может исчезнуть при очистке данных. JSON-копия нужна для продолжения работы, а не для публикации.</p>
+        </form>
+      </section>
+
+      <section class="example-info panel" id="example-info" hidden aria-labelledby="example-title">
+        <p class="eyebrow" data-i18n="fictionalLabel">Отдельный вымышленный пример</p>
+        <h2 id="example-title" data-i18n="exampleTitle">Посмотрите структуру на одном сценарии.</h2>
+        <p data-i18n="exampleInfo">Все действия, подтверждения и результаты здесь придуманы. Ваш черновик сохранён отдельно и не заменяется примером.</p>
+        <button type="button" class="button primary" id="back-to-work" data-i18n="backToWork">Вернуться к своему кейсу</button>
+        <p class="quiet" data-i18n="exampleNote">Можно скачать пример как образец структуры. В каждом экспорте останется явная пометка о вымышленном содержании.</p>
+      </section>
+
+      <aside class="result-panel" aria-labelledby="result-title">
+        <div class="result-sticky">
+          <div class="panel-heading result-heading">
+            <div><p class="eyebrow" data-i18n="livePreview">Предпросмотр результата</p><h2 id="result-title" data-i18n="resultTitle">Готовый кейс</h2></div>
+            <span class="progress-pill" id="progress-count">0 / 8</span>
+          </div>
+          <div class="readiness" id="readiness"></div>
+          <div class="export-actions">
+            <button type="button" class="button primary" id="export-markdown" disabled data-i18n="exportMarkdown">Скачать Markdown</button>
+            <button type="button" class="button secondary" id="export-html" disabled data-i18n="exportHtml">Скачать HTML-страницу</button>
+          </div>
+          <button type="button" class="button secondary career-export" id="export-career" disabled data-i18n="exportCareer">Скачать опыт для Portfolio / Interview</button>
+          <p class="quiet export-note" data-i18n="exportNote">HTML — самостоятельный файл без скриптов и внешних ресурсов. Перед отправкой проверьте текст, доказательства и доступ к ссылке.</p>
+          <div class="preview-scroll" tabindex="0" role="region" aria-label="Предпросмотр кейса" data-i18n-aria="previewRegion">
+            <div id="case-preview"></div>
+          </div>
+          <a href="guide.html#publish-ru" class="text-link" id="publish-guide" data-i18n="publishGuide">Как опубликовать HTML</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="next-section" aria-labelledby="next-title">
+      <p class="eyebrow" data-i18n="nextLabel">Когда одного кейса мало</p>
+      <h2 id="next-title" data-i18n="nextTitle">Продолжите с тем, что уже описали.</h2>
+      <div class="next-grid">
+        <article class="next-card"><h3>Portfolio Case Kit</h3><p data-i18n="portfolioNext">Соберите несколько кейсов в личный сайт: черновики, изображения, выбор опубликованных работ и темы оформления.</p><a id="portfolio-link" class="text-link" href="https://pease163.github.io/digital-products/products/portfolio-case.html" data-i18n="portfolioLink">Посмотреть Portfolio Case Kit</a></article>
+        <article class="next-card"><h3>Interview Proof Kit</h3><p data-i18n="interviewNext">Используйте библиотеку своего опыта для нескольких вакансий: отдельные доказательства, ответы и планы подготовки.</p><a id="interview-link" class="text-link" href="https://pease163.github.io/digital-products/products/interview-proof.html" data-i18n="interviewLink">Посмотреть Interview Proof Kit</a></article>
+      </div>
+      <p class="quiet" data-i18n="paidNote">Это отдельные платные продукты. Бесплатный кейс можно использовать и публиковать без покупки.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>Kornilov Tools · Practical tools. Clear results.</p><a id="guide-link" href="guide.html#use-ru" data-i18n="guideLink">Использование и приватность</a></div></footer>
+  <p class="action-status sr-only" id="action-status" role="status" aria-live="polite"></p>
+  <div class="modal-backdrop" id="replace-modal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description" tabindex="-1">
+      <h2 id="modal-title"></h2><p id="modal-description"></p>
+      <p class="quiet" data-i18n="modalBackup">При продолжении сначала скачается резервная копия текущего черновика. Новый черновик будет сохранён локально.</p>
+      <div class="actions"><button type="button" class="button secondary" id="modal-cancel" data-i18n="cancel">Отмена</button><button type="button" class="button primary" id="modal-apply" data-i18n="replaceConfirm">Сохранить копию и продолжить</button></div>
+    </section>
+  </div>
+</body>
+</html>

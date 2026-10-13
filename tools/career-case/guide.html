@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'none'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>Использование и публикация одного кейса — Kornilov Tools</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header class="site-header"><div class="container nav"><a class="brand" href="https://pease163.github.io/digital-products/"><span class="brand-symbol" aria-hidden="true">K</span><span>Kornilov <span class="brand-light">Tools</span></span></a><a href="#use-en" lang="en">English</a></div></header>
+  <main class="container guide-main">
+    <a class="text-link" href="index.html?lang=ru">‹ К своему кейсу</a>
+    <h1>Один технический кейс</h1>
+    <nav aria-label="Разделы инструкции"><a href="#use-ru">Работа и приватность</a><a href="#publish-ru">Публикация HTML</a><a href="#use-en" lang="en">English guide</a></nav>
+    <section id="use-ru" aria-labelledby="use-title-ru">
+      <h2 id="use-title-ru">Работа и приватность</h2>
+      <p>Выберите одну задачу из собственного опыта. Подойдут работа, личный или учебный проект. Обозначьте контекст, свою часть ответственности, технический выбор, наблюдаемый результат, подтверждение и то, что пока нельзя утверждать.</p>
+      <p>Пустая форма не содержит достижений. Вымышленный пример открывается отдельно и не заменяет ваш черновик. Экспорт примера всегда содержит явную пометку о вымышленном содержании.</p>
+      <ul>
+        <li>Редактор хранит один черновик в <code>localStorage</code> этого браузера. Он не отправляет введённый текст, ссылку или файлы в API, не подключает аналитику и не требует аккаунта.</li>
+        <li>Открытие редактора и обычные переходы по ссылкам используют сеть. Сайты назначения и сервис размещения могут вести собственные технические журналы. Сам редактор не открывает введённую ссылку автоматически.</li>
+        <li>В приватном режиме или при запрете хранения автосохранение может не работать. Появится предупреждение. Скачайте JSON-копию до закрытия страницы; очищение браузерных данных удаляет локальный черновик.</li>
+        <li>JSON — личная резервная копия одного кейса. «Открыть резервную копию» принимает только формат этого бесплатного редактора, до 256 КиБ. Старый черновик скачивается перед заменой; в браузере также сохраняется одна копия перед последней заменой, если локальное хранение доступно.</li>
+        <li>Если сохранённые данные повреждены, редактор защищает их от перезаписи. Можно скачать исходник, открыть корректную резервную копию или подтвердить новый пустой кейс.</li>
+        <li>RU/EN переключает подписи и язык экспорта. Ваш текст автоматически не переводится.</li>
+      </ul>
+      <h3>Проверьте содержание перед отправкой</h3>
+      <p>Заполненные поля не доказывают достоверность опыта. Не присваивайте результат всей команды. Не вставляйте придуманные проценты, имена клиентов, секреты, внутренние адреса или чужие персональные данные. Если подтверждение закрыто, опишите доступную границу проверки и не публикуйте файл без разрешения.</p>
+      <p>Ссылка необязательна. Поддерживается HTTPS без логина и пароля в адресе. Редактор проверяет формат, но не существование страницы или доступ получателя. Проверьте её самостоятельно без авторизации. Добровольная ссылка Kornilov Tools в экспорте выключена по умолчанию.</p>
+      <h3>Форматы результата</h3>
+      <ul>
+        <li><code>technical-case.md</code> — Markdown для README, заметки или отправки. Он содержит только ваш кейс, без редактора.</li>
+        <li><code>index.html</code> — самостоятельная страница с встроенными стилями. У неё нет скриптов, шрифтов, изображений и иных внешних ресурсов. Она работает локально без сети; внешняя ссылка открывается только по нажатию.</li>
+        <li><code>my-case-backup.json</code> — черновик для дальнейшего редактирования. Храните отдельно от публикуемой страницы.</li>
+        <li><code>one-case-career-library.json</code> — отдельный файл опыта для выбранного импорта в Portfolio Case Kit или Interview Proof Kit. Он сохраняет все поля кейса, его идентификатор и пометку о вымысле; личные настройки редактора в него не входят.</li>
+      </ul>
+      <h3>Продолжить в Portfolio или Interview</h3>
+      <ol>
+        <li>Заполните обязательные поля и нажмите <strong>«Скачать опыт для Portfolio / Interview»</strong>. Не путайте этот файл с резервной копией редактора.</li>
+        <li>Откройте свой редактор Portfolio Case Kit или Interview Proof Kit версии 1.1. Выберите <strong>«Добавить опыт»</strong> и скачанный <code>one-case-career-library.json</code>. Если такой кнопки нет, нужна версия редактора с поддержкой библиотеки опыта.</li>
+        <li>Проверьте перенесённый кейс. Повторный импорт обновляет тот же идентификатор вместо создания копии. Пометка вымышленного примера сохраняется; пример не становится вашим опытом. Импорт не публикует данные.</li>
+      </ol>
+      <p>Бесплатная версия описывает один кейс. Она не включает библиотеку кейсов, изображения, темы, сайт с профилем или планы для нескольких вакансий. Эти задачи выполняют отдельные Portfolio Case Kit и Interview Proof Kit. Выбор файла и продолжение работы остаются под вашим контролем.</p>
+    </section>
+    <section id="publish-ru" aria-labelledby="publish-title-ru">
+      <h2 id="publish-title-ru">Как опубликовать HTML</h2>
+      <p>Редактор не размещает страницу и не выдаёт публичную ссылку. Вы скачиваете готовый <code>index.html</code>, проверяете его локально и отдельно выбираете размещение.</p>
+      <ol>
+        <li>Скачайте HTML своего кейса и откройте файл в браузере. Проверьте результат, вымысел/факты, разрешение на публикацию и внешнюю ссылку.</li>
+        <li>Для GitHub Pages создайте отдельный публичный репозиторий и загрузите готовый <code>index.html</code> в его корень. Не загружайте личный JSON или весь редактор.</li>
+        <li>В <strong>Settings → Pages</strong> выберите <strong>Deploy from a branch</strong>, свою основную ветку и папку <strong>/(root)</strong>. Сохраните настройку.</li>
+        <li>Дождитесь завершения публикации и откройте адрес, показанный в Pages. Проверьте его без авторизации. Для обновления замените готовый <code>index.html</code> новым экспортом.</li>
+      </ol>
+      <p>GitHub Pages доступен для публичных репозиториев на GitHub Free; доступность для приватных репозиториев зависит от плана. Страница Pages публична, даже если исходный репозиторий приватный. Меню и условия могут измениться — используйте <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noopener noreferrer">официальную инструкцию GitHub</a>.</p>
+    </section>
+    <div class="guide-language" lang="en">
+      <a class="text-link" href="index.html?lang=en">‹ Return to your case study</a>
+      <section id="use-en" aria-labelledby="use-title-en">
+        <h2 id="use-title-en">Use and privacy</h2>
+        <p>Choose one task from your own experience: work, a personal project or a course project. Describe the problem, your responsibility, your decision and alternative, observed result, evidence and limits.</p>
+        <p>The blank worksheet contains no achievements. A fictional example opens separately and never replaces your draft. Its exports always keep a fictional-content notice.</p>
+        <ul>
+          <li>The editor stores one draft in this browser’s <code>localStorage</code>. It sends no entered text, links or files to an API, includes no analytics and requires no account.</li>
+          <li>Loading the editor and following links use the network. Destination sites and hosting services may keep technical logs. Your evidence link is not opened automatically.</li>
+          <li>Autosave may be unavailable in private browsing or restricted storage; a warning appears. Download JSON before closing the page. Clearing browser data removes the local draft.</li>
+          <li>JSON is a private one-case backup. Only this free editor’s format is accepted, up to 256 KiB. Replacing a draft downloads the previous one first and keeps one local rescue copy when browser storage is available.</li>
+          <li>A corrupted saved draft is protected from overwrite. Download the original, restore a valid backup, or confirm a new blank case study.</li>
+          <li>RU/EN changes labels and export language. Your text is not translated automatically.</li>
+        </ul>
+        <h3>Review before sharing</h3>
+        <p>Filled fields do not establish truthful experience. State your personal contribution; do not claim the entire team’s work. Remove secrets, invented percentages, client identities, private addresses and other people’s personal data. If evidence is private, explain the available verification boundary instead of publishing it without permission.</p>
+        <p>The optional evidence link accepts HTTPS without credentials. The editor checks format, not existence or the recipient’s access. Check it yourself while signed out. The optional Kornilov Tools credit link is off by default.</p>
+        <h3>Your files</h3>
+        <ul>
+          <li><code>technical-case.md</code>: Markdown with your case study, without the editor.</li>
+          <li><code>index.html</code>: standalone HTML with embedded styles, no scripts or remote assets. It works locally offline. An external link opens only when clicked.</li>
+          <li><code>my-case-backup.json</code>: a private editable draft. Keep it separate from the public page.</li>
+          <li><code>one-case-career-library.json</code>: a separate experience file for your chosen import into Portfolio Case Kit or Interview Proof Kit. It preserves the case fields, stable ID and fictional flag without the editor’s private preferences.</li>
+        </ul>
+        <h3>Continue in Portfolio or Interview</h3>
+        <ol>
+          <li>Fill the required fields and choose <strong>“Download experience for Portfolio / Interview”</strong>. This file is different from the editor backup.</li>
+          <li>Open your Portfolio Case Kit or Interview Proof Kit 1.1 editor. Choose <strong>“Add experience”</strong> and select <code>one-case-career-library.json</code>. If the button is absent, update to an editor version that supports the experience library.</li>
+          <li>Review the imported case. Importing it again updates the same stable ID rather than creating a copy. A fictional example keeps its fictional flag and does not become your experience. Importing does not publish your data.</li>
+        </ol>
+        <p>The free tool covers one case. Several cases, images, themes, a profile website and preparation for multiple vacancies belong to the separate Portfolio Case Kit and Interview Proof Kit. You choose the file and control the next step.</p>
+      </section>
+      <section id="publish-en" aria-labelledby="publish-title-en">
+        <h2 id="publish-title-en">Publish the HTML separately</h2>
+        <p>The editor does not host your page or create a public link. Download your own <code>index.html</code>, review it locally and choose hosting separately.</p>
+        <ol>
+          <li>Open the exported HTML in your browser. Check facts, publication permission and evidence-link access.</li>
+          <li>For GitHub Pages, create a separate public repository and upload only the exported <code>index.html</code> at its root. Do not upload the private JSON or the editor.</li>
+          <li>Open <strong>Settings → Pages → Deploy from a branch</strong>, choose your main branch and <strong>/(root)</strong>, then save.</li>
+          <li>Wait for deployment and use the address shown in Pages. Check it while signed out. Update by replacing <code>index.html</code> with a fresh export.</li>
+        </ol>
+        <p>GitHub Pages is available for public repositories on GitHub Free; private-repository availability depends on the plan. A Pages site is public even if the source repository is private. Refer to <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noopener noreferrer">GitHub’s official instructions</a> for current menus and conditions.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>Kornilov Tools · Practical tools. Clear results.</p><a href="index.html">One technical case study</a></div></footer>
+</body>
+</html>

@@ -27,7 +27,7 @@ Scope Change Desk adds original scope, a change log, approval evidence and a spe
 
 ## Share card
 
-The HTML card hides all figures by default. A separate checkbox includes base/extra hours, hourly return after extra work and the proposed fee. The tool has no client or project name fields. It downloads locally; you decide whether and where to share it. Demo calculations are marked fictional. The card CTA opens the free Extra Work Calculator so the recipient can run their own calculation. It uses generic UTM tags only, without your inputs. The paid next step is available inside the tool.
+In “Share the result”, choose “Copy text”, “Download PNG” or “Download HTML”. One “Include figures in all formats” checkbox adds base/extra hours, hourly return after extra work and the proposed fee. All these figures are hidden by default in all three formats. Client and project names are excluded; demos are explicitly marked fictional. Updating the calculation or changing the language turns the checkbox off again. PNG is created locally by the browser and downloaded as an image, not copied to the clipboard. If text copying is unavailable, a selectable text field appears: copy manually using the menu or Ctrl/Cmd+C. Text and HTML include the free Extra Work Calculator URL so the recipient can run their own calculation; the address drawn in the PNG is not clickable. The URL contains only the language and generic UTM tags, without your inputs. Downloads start only when requested; check the file in your downloads. The app never sends anything automatically. The paid next step is available inside the tool.
 
 ## Support
 
