@@ -20,12 +20,19 @@
       : document.getElementById('report-section')?.hidden === false && !document.getElementById('export')?.disabled;
     if (ready) {activated=true;window.KornilovAnalytics?.track('result_ready',{product,placement:'tool'});}
   }
+  // A file read finishes asynchronously, after the native change event. Observe only
+  // the report's visibility, never file contents, headers or calculation values.
+  const reportSection = document.getElementById('report-section');
+  if (reportSection) new MutationObserver(markResult).observe(reportSection, {attributes:true, attributeFilter:['hidden']});
+  document.addEventListener('input', event => {
+    if (product === 'extra-work' && event.target.matches?.('#budget,#hours,#extra,#rate')) markResult();
+  });
   document.addEventListener('change', () => setTimeout(markResult, 0));
   document.addEventListener('click', event => {
     const target = event.target;
     if (target.closest?.('#demo,#example')) setTimeout(markResult,0);
-    if (target.closest?.('#share-card button,#result > button')) window.KornilovAnalytics?.track('share_click',{product,placement:'result'});
-    if (target.closest?.('#export')) window.KornilovAnalytics?.track('download_click',{product,placement:'result'});
+    if (target.closest?.('#share-text,#share-png,#share-html')) window.KornilovAnalytics?.track('share_click',{product,placement:'result'});
+    if (target.closest?.('#export,#share-png,#share-html')) window.KornilovAnalytics?.track('download_click',{product,placement:'result'});
     const link=target.closest?.('a[href]');
     if (link && /\/products\/(scope-change|csv-reconcile)\.html/.test(link.href)) {
       const destination=link.href.includes('scope-change')?'scope-change':'csv-reconcile';

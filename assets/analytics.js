@@ -4,15 +4,21 @@
   const allowedProducts = new Set(['catalog','extra-work','scope-change','csv-preflight','csv-reconcile','interview-proof','portfolio-case','launch-control','support','privacy']);
   const allowedPlacements = new Set(['page','hero','hero_demo','catalog','home_examples','closing','product_hero','product_details','purchase_panel','example','tool','result','footer','unknown']);
   const config = window.KORNILOV_ANALYTICS_CONFIG || {};
+  const diagnostics = new URLSearchParams(location.search).get('diagnostics') === '1';
+  const production = location.origin === 'https://pease163.github.io' && location.pathname.startsWith('/digital-products/');
   let endpoint = '';
-  if (config.enabled === true && typeof config.endpoint === 'string' && config.endpoint) {
-    try { const url = new URL(config.endpoint, window.location.href); if (url.protocol === 'https:') endpoint = url.href; } catch { /* Leave collection disabled. */ }
+  if (production && !diagnostics && config.enabled === true && typeof config.endpoint === 'string' && config.endpoint) {
+    try {
+      const url = new URL(config.endpoint);
+      if (url.origin === 'https://kornilov-tools-analytics.sasilinesas.chatgpt.site' && url.pathname === '/api/events' && !url.username && !url.password && !url.search && !url.hash) endpoint = url.href;
+    } catch { /* Leave collection disabled. */ }
   }
   // No cookie, persistent browser identifier, localStorage, full URL, referrer,
   // UTM passthrough, text, file name, calculation values or file contents.
   const events = [];
   function track(name, metadata = {}) {
     if (!allowedEvents.has(name)) return false;
+    if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) metadata = {};
     const product = allowedProducts.has(metadata.product) ? metadata.product : 'catalog';
     const placement = allowedPlacements.has(metadata.placement) ? metadata.placement : 'unknown';
     const payload = Object.freeze({ schema: 1, event: name, product, placement, language: document.documentElement.lang === 'en' ? 'en' : 'ru', timestamp: new Date().toISOString() });
@@ -35,13 +41,13 @@
     return report;
   }
   window.KornilovAnalytics = Object.freeze({ track, getEvents: () => events.slice(), exportEvents, collectionEnabled: Boolean(endpoint) });
-  if (new URLSearchParams(location.search).get('diagnostics') === '1') {
+  if (diagnostics) {
     const panel = document.createElement('aside');
     panel.className = 'diagnostics-panel';
     const explanation = document.createElement('p');
     explanation.textContent = document.documentElement.lang === 'en'
-      ? 'Owner diagnostics: events from this page in this tab only. Not visitor totals or sales. Reloading clears this log.'
-      : 'Диагностика владельца: события этого экрана в текущей вкладке. Это не общая посещаемость и не продажи. Перезагрузка очищает журнал.';
+      ? 'Owner diagnostics: network collection is disabled. Events stay in this tab; internal storefront links preserve diagnostics mode. These are not visitor totals or sales. Reloading clears this log.'
+      : 'Диагностика владельца: отправка событий отключена. Журнал остаётся в этой вкладке; внутренние ссылки витрины сохраняют режим диагностики. Это не общая посещаемость и не продажи. Перезагрузка очищает журнал.';
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'button secondary';
@@ -51,15 +57,29 @@
     document.body.append(panel);
   }
   document.addEventListener('click', event => {
+    if (diagnostics) {
+      const navigation = event.target.closest?.('a[href]');
+      if (navigation && !navigation.getAttribute('href').startsWith('#')) {
+        try {
+          const url = new URL(navigation.href);
+          if (url.origin === 'https://pease163.github.io' && url.pathname.startsWith('/digital-products/')) {
+            url.searchParams.set('diagnostics', '1');
+            navigation.href = url.href;
+          }
+        } catch { /* Leave non-navigation links unchanged. */ }
+      }
+    }
     const link = event.target.closest?.('[data-kt-event]');
     if (link) track(link.dataset.ktEvent, {product:link.dataset.ktProduct, placement:link.dataset.ktPlacement});
-  });
+  }, true);
   const page = (document.body.dataset.page || 'catalog').replace(/-example$/, '');
   track('page_view', {product:page, placement:'page'});
-  if (endpoint) {
-    const notice = document.getElementById('analytics-disclosure');
-    if (notice) notice.textContent = document.documentElement.lang === 'en'
-      ? 'This site sends only action names, product names, link placement, language and time to the configured event service. No persistent browser identifier, file names, file contents or calculation values are included. Network infrastructure may process connection metadata.'
-      : 'Сайт отправляет в настроенный сервис только имена действий, инструментов, мест перехода, язык и время. Постоянный идентификатор браузера, имена и содержимое файлов, значения расчётов не включаются. Сетевая инфраструктура может обрабатывать данные соединения.';
-  }
+  const notice = document.getElementById('analytics-disclosure');
+  if (notice) notice.textContent = document.documentElement.lang === 'en'
+    ? (endpoint
+      ? 'The storefront and its online Extra Work and CSV Preflight tools send only a schema version, action name, product name, button placement and language to the event receiver. The service stores aggregate counts by UTC day. The analytics code does not create cookies or persistent browser identifiers and sends no URLs, referrers, UTM parameters, case text, file names, file contents or calculation values. Network infrastructure may process connection metadata.'
+      : 'Network collection is disabled on this page in diagnostics mode or outside the production storefront. Action names remain only in this tab’s memory; reloading clears the log. Case text, file names, file contents and calculation values are not included.')
+    : (endpoint
+      ? 'Витрина и её онлайн-инструменты Extra Work и CSV Preflight отправляют приёмнику только версию схемы, имя действия, инструмент, место кнопки и язык. Сервис хранит суммарные счётчики по дням UTC. Код аналитики не создаёт cookies и постоянные идентификаторы браузера; не отправляет URL, referrer, UTM, тексты кейсов, имена и содержимое файлов, значения расчётов. Сетевая инфраструктура может обрабатывать данные соединения.'
+      : 'В режиме диагностики или вне публичной витрины отправка событий на этой странице отключена. Имена действий остаются только в памяти текущей вкладки; перезагрузка очищает журнал. Тексты кейсов, имена и содержимое файлов, значения расчётов в события не включаются.');
 })();
